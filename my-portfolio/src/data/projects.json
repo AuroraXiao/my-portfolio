@@ -1,0 +1,126 @@
+[
+  {
+    "slug": "yolov8-tracking",
+    "title": "YOLOv8 Multi-Class Tracking on MOT17",
+    "year": null,
+    "tags": ["Computer Vision", "Python", "YOLO", "Multi-Object Tracking"],
+    "role": "Algorithm Engineer",
+    "tools": ["YOLOv8", "ByteTrack", "OpenCV", "Ultralytics"],
+    "cover": "/src/assets/images/github/yolov8-tracking.svg",
+    "gallery": [
+      "/src/assets/images/github/yolov8-tracking.svg"
+    ],
+    "githubUrl": "https://github.com/AuroraXiao/YOLOv8-Multi-Class-Tracking-on-MOT17.git",
+    "brief": "基于 YOLOv8 与 ByteTrack 的多目标检测与行人追踪项目，在 MOT17 数据集上实现 85% 准确率的端到端追踪流程。",
+    "summary": [
+      "数据处理：清洗 MOT17 数据并转换 3000+ 标注为 YOLOv8 格式，涵盖 12 类对象",
+      "模型训练：基于 Ultralytics YOLOv8n 训练并调参，提升小目标检测效果",
+      "多目标追踪：集成 ByteTrack 算法，实现高精度目标 ID 匹配与连续跟踪",
+      "结果可视化：输出检测并追踪视频，准确率达 85%，完成端到端行人追踪"
+    ],
+    "featured": true,
+    "type": "github"
+  },
+  {
+    "slug": "medical-qa",
+    "title": "Protein Interaction Prediction with Flan-T5",
+    "year": null,
+    "tags": ["NLP", "Python", "Bioinformatics", "Multi-Modal"],
+    "role": "Algorithm Engineer", 
+    "tools": ["Flan-T5", "HuggingFace", "Protein Embedding", "Instruction Tuning"],
+    "cover": "/src/assets/images/github/medical-qa.svg",
+    "gallery": [
+      "/src/assets/images/github/medical-qa.svg"
+    ],
+    "githubUrl": "https://github.com/AuroraXiao/medical-qa-flan-t5",
+    "brief": "基于 Flan-T5 的多模态大语言模型蛋白质互作预测系统，通过指令微调与特征增强提升生物信息任务性能。",
+    "summary": [
+      "模型微调：基于 HuggingFace 平台对 Flan-T5 进行指令微调，提升蛋白质互作预测能力",
+      "特征增强：将蛋白质 ID 作为特殊 token 输入，融合预训练向量丰富语义表示",
+      "流程构建：搭建兼容 HuggingFace 的多模态训练管线，支持数据格式转换与任务配置",
+      "性能评估：在多个蛋白质互作数据集上完成预测实验，对比主流大语言模型并量化性能提升"
+    ],
+    "featured": true,
+    "type": "github"
+  },
+  {
+    "slug": "moodcheck-app",
+    "title": "MoodCheck AI – Mental Health Companion App",
+    "year": null,
+    "tags": ["Mobile", "Prototype"],
+    "role": "UI/UX Designer",
+    "tools": ["Figma", "Axure"],
+    "cover": "/src/assets/images/moodcheck/cover.png",
+    "gallery": [
+      "/src/assets/images/moodcheck/01.png",
+      "/src/assets/images/moodcheck/02.png",
+      "/src/assets/images/moodcheck/03.png"
+    ],
+    "figmaUrl": "https://www.figma.com/proto/cTW8pzDJDgbwhAMSiCgHcK/MoodCheck?node-id=604-2&t=WCqa9R1FoPEA6kZH-1",
+    "brief": "An AI-assisted mood tracking and gentle check‑in app designed for quick daily reflections.",
+    "summary": [
+      "30‑second daily check‑ins with auto‑tagged moods",
+      "Conversational tips powered by rule‑based prompts (prototype)",
+      "Lightweight charts to visualize emotional trends",
+      "Focus on micro‑interactions and zero‑friction inputs"
+    ],
+    "problem": "People hesitate to log emotions because most trackers feel heavy and time‑consuming.",
+    "constraints": [
+      "Mobile-first, one-hand usage",
+      "Low cognitive load, no long forms",
+      "Respect privacy; avoid sensitive clinical wording in UI"
+    ],
+    "process": {
+      "wireframes": ["/src/assets/images/moodcheck/wire-01.png"],
+      "flows": [],
+      "notes": ["Explored how to reduce friction using prefilled suggestions and quick-tap chips"]
+    },
+    "outcome": {
+      "metrics": ["Prototype usability sessions (n=5): faster task completion vs. baseline notes app"],
+      "learnings": ["Short, gentle prompts increase willingness to check-in; charts must stay glanceable"]
+    },
+    "featured": true,
+    "type": "ui"
+  },
+  {
+    "slug": "medical_appointment_app",
+    "title": "Medical Appointment App — Easy Appointment, Better Care",
+    "year": null,
+    "tags": ["Mobile", "Prototype"],
+    "role": "UI/UX Designer",
+    "tools": ["Figma", "Axure"],
+    "cover": "/src/assets/images/med-appointment/cover.png",
+    "gallery": [
+      "/src/assets/images/med-appointment/01.png",
+      "/src/assets/images/med-appointment/02.png",
+      "/src/assets/images/med-appointment/03.png"
+    ],
+    "figmaUrl": "https://www.figma.com/design/Xx9IiQBbiZ76XjxUTGTWJr/Medical-Appointment-App?node-id=0-1&m=dev&t=JQDu89MX8siHHQZi-1",
+    "brief": "Streamlined doctor search and booking with clear availability and simple pre‑visit prep.",
+    "summary": [
+      "Doctor search with filters and real‑time slots",
+      "Clear appointment steps and reminders",
+      "Patient‑friendly language and iconography",
+      "Accessible contrast and large touch targets"
+    ],
+    "problem": "Users struggle to find suitable doctors and understand availability quickly.",
+    "constraints": [
+      "Low‑light environments (in clinics)",
+      "Support for older users (legibility, tap targets)",
+      "Minimal onboarding; instant value"
+    ],
+    "process": {
+      "wireframes": ["/src/assets/images/med-appointment/wire-01.png"],
+      "flows": [],
+      "notes": ["Tested alternative schedule layouts; grid performed better than list in quick scans"]
+    },
+    "outcome": {
+      "metrics": ["Prototype task success in navigation flows improved in user tests"],
+      "learnings": ["Surfacing availability first reduces back-and-forth between doctor profiles"]
+    },
+    "featured": true,
+    "type": "ui"
+  }
+]
+
+

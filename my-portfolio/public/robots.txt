@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://AuroraXiao.github.io/my-portfolio/sitemap.xml
+
+
