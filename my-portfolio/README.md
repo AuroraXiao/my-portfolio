@@ -1,67 +1,91 @@
-# My Portfolio (React + Vite + TypeScript + Tailwind + shadcn-style UI)
+# Personal Portfolio
 
-Monochrome portfolio and online CV for Ruitong Xiao.
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.
 
-- Tech: React, Vite, TypeScript, Tailwind CSS, shadcn-style UI (Radix), lucide-react, framer-motion, Swiper, react-router-dom, clsx, tailwind-merge, gh-pages
-- Deployment: GitHub Pages (`AuroraXiao/my-portfolio`)
-- Base URL: `/my-portfolio/`
+## Features
 
-## Install
+- 🎨 Modern UI with Tailwind CSS
+- 📱 Fully responsive design
+- ⚡ Fast performance with Vite
+- 🎭 Smooth animations with Framer Motion
+- 🔍 Project filtering and search
+- 📊 GitHub projects integration
+- 🎯 UI/UX design showcase
 
-```bash
-pnpm i
-```
+## Tech Stack
+
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **UI Components**: Radix UI
 
 ## Development
 
 ```bash
+# Install dependencies
+pnpm install
+
+# Start development server
 pnpm dev
-```
 
-Then open http://localhost:5173/my-portfolio/
-
-## Build
-
-```bash
+# Build for production
 pnpm build
+
+# Preview production build
 pnpm preview
 ```
 
-## Deploy to GitHub Pages
+## Deployment
 
-1. Initialize repo and push:
+This project is configured for GitHub Pages deployment.
 
-```bash
-git init
-git add -A
-git commit -m "init"
-git branch -M main
-git remote add origin https://github.com/AuroraXiao/my-portfolio.git
-git push -u origin main
-```
+### Automatic Deployment (Recommended)
 
-2. Enable GitHub Pages: Settings → Pages → Build and deployment → Deploy from branch → Branch: `gh-pages`.
+1. Push your code to the `master` branch
+2. GitHub Actions will automatically build and deploy to GitHub Pages
+3. Your site will be available at: `https://[username].github.io/my-portfolio/`
 
-3. Deploy from local:
+### Manual Deployment
+
+If you prefer manual deployment:
 
 ```bash
+# Build the project
+pnpm build
+
+# Deploy to GitHub Pages
 pnpm deploy
 ```
 
-4. Optional custom domain: add your domain to `public/CNAME`.
+### GitHub Pages Setup
 
-## Content
+1. Go to your repository settings
+2. Navigate to "Pages" section
+3. Set source to "GitHub Actions"
+4. Ensure the repository is public
 
-- Edit `src/data/site.ts`, `src/data/links.ts`, `src/data/skills.ts`, `src/data/projects.json`.
-- Images: replace SVG placeholders in `src/assets/images/...` with your exports (recommended `.webp`). Keep same filenames or update JSON.
-- Empty social links in `LINKS` are auto-hidden.
+## Project Structure
 
-## Notes
+```
+src/
+├── components/     # Reusable UI components
+├── data/          # Static data (projects, skills, etc.)
+├── lib/           # Utility functions
+├── pages/         # Page components
+└── assets/        # Images and static assets
+```
 
-- WCAG-friendly monochrome theme.
-- Year is optional and hidden when missing.
-- Work page supports tag filters + search; URL query reflects filters for sharing.
-- Project page has tabs and related projects by tag.
-- `sitemap.xml` is a static placeholder; update when adding new projects or automate if desired.
+## Customization
+
+- **Projects**: Edit `src/data/projects.json`
+- **Skills**: Edit `src/data/skills.ts`
+- **Site Info**: Edit `src/data/site.ts`
+- **Styling**: Modify `src/index.css` and Tailwind config
+
+## License
+
+MIT
 
 
