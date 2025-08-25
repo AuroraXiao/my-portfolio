@@ -28,8 +28,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'pnpm'
-          cache-dependency-path: pnpm-lock.yaml
+          # 不要在这里启用 pnpm 缓存；pnpm 尚未激活，会导致找不到 pnpm
 
       # 使用 corepack 激活 pnpm（与 package.json 中 packageManager 对齐）
       - name: Enable corepack
