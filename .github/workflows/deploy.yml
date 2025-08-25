@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master ]   # 👉 若默认分支是 main，请改成 main
   workflow_dispatch:
 
 permissions:
@@ -17,10 +17,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CI: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 安装 Node，并启用 pnpm 缓存（基于 pnpm-lock.yaml）
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -28,28 +31,47 @@ jobs:
           cache: 'pnpm'
           cache-dependency-path: pnpm-lock.yaml
 
+      # 使用 corepack 激活 pnpm（与 package.json 中 packageManager 对齐）
       - name: Enable corepack
         run: corepack enable
 
-      - name: Prepare pnpm
+      - name: Prepare pnpm 10
         run: corepack prepare pnpm@10 --activate
 
+      # （可选但建议）缓存 pnpm store，加速安装
+      - name: Compute pnpm store path
+        id: pnpm-cache
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+
+      - name: Restore pnpm store cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # 安装依赖（CI 默认冻结锁文件）
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # 构建
       - name: Build
         run: pnpm build
 
-      - name: Create 404.html for SPA routing
-        run: cp dist/index.html dist/404.html
+      # SPA 刷新 404 兜底（可选但强烈建议）
+      - name: Copy 404 for SPA
+        run: cp dist/index.html dist/404.html || true
 
+      # 配置 Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      # 上传构建产物（请确保产物目录为 dist；若为 build，请相应修改）
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist   # 你的产物目录是 dist 就保持
+          path: dist
 
   deploy:
     environment:
